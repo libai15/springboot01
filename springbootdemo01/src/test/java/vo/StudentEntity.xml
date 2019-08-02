@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="vo.StudentEntity">
+        <table name="student" schema="db5" catalog=""/>
+        <attributes>
+            <basic name="id">
+                <column name="id" nullable="false" precision="11"/>
+            </basic>
+            <basic name="stuName">
+                <column name="stu_name" nullable="false" precision="30"/>
+            </basic>
+            <basic name="stuAge">
+                <column name="stu_age" nullable="false" precision="11"/>
+            </basic>
+            <basic name="stuBirthday">
+                <column name="stu_birthday" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="stuSex">
+                <column name="stu_sex" nullable="false" length="10"/>
+            </basic>
+            <basic name="stuAddress">
+                <column name="stu_address" nullable="false" length="50"/>
+            </basic>
+            <basic name="stuMath">
+                <column name="stu_math" nullable="false" precision="2"/>
+            </basic>
+            <basic name="stuEnglish">
+                <column name="stu_english" nullable="false" precision="2"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
