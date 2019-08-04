@@ -1,6 +1,6 @@
 /**
  * @ClassName:EnumDemo
- * @Description: //TODO
+ * @Description: 枚举测试
  * @Author:xxp
  * @Date:2019/4/27 10:48
  * @Version:1.0

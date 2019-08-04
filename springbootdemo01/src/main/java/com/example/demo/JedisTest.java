@@ -9,7 +9,6 @@
 
 package com.example.demo;
 
-import com.example.demo.util.RedisPoolUtil;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
@@ -27,16 +26,16 @@ public class JedisTest {
       **/
     @Test
     public void test1() {
-        /*Jedis jedis = new Jedis("192.168.87.128",6379);
-        jedis.auth("123456");*/
-        Jedis jedis = RedisPoolUtil.getJedis();
+        Jedis jedis = new Jedis("192.168.87.128",6379);
+        jedis.auth("123456");
+        //Jedis jedis = RedisUtil.getJedis();
         System.out.println(jedis.ping());
         //测试连接字符串
         jedis.set("k1", "123");
         jedis.get("k1");
         System.out.println(jedis.get("k1"));
-       // jedis.close();
-        RedisPoolUtil.close(jedis);
+        jedis.close();
+       // RedisUtil.close(jedis);
     }
     /**
       * @Author libai
@@ -60,16 +59,6 @@ public class JedisTest {
             jedis.set(key,result);
             System.out.println("从数据库取到的数据:"+jedis.get(key));
         }
-    }
-    /**
-      * @Author libai
-      * @Description 测试hash
-      * @Date 20:10 2019/8/3
-      * @Param []
-      * @return void
-      **/
-    public void test3(){
-
     }
 
 }

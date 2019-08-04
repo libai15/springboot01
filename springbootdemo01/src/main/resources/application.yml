@@ -14,6 +14,19 @@ spring:
       ddl-auto: none
     # 控制台显示SQL
     show-sql: true
+  redis:
+    host: 192.168.87.128
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 1
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 0
+
 
 ---
 server:

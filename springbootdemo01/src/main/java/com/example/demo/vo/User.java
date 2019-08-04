@@ -1,53 +1,44 @@
-/**
- * @ClassName:User
- * @Description: //TODO
- * @Author:xxp
- * @Date:2019/8/3 21:31
- * @Version:1.0
- **/
-
-
 package com.example.demo.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
+import java.util.Objects;
 
+/**
+  * @Author libai
+  * @Description 测试实体类
+  * @Date 11:53 2019/8/4
+  * @Param
+  * @return
+  **/
+
+@Data
 public class User implements Serializable {
-    //生成序列化id
-    private static final long serialVersionUID = -9082434493334047118L;
-    private String id;
+
+    private static final long serialVersionUID = 1L;
+
+    private Integer id;
     private String name;
-    private Integer age;
-    private String remark;
+    private String sex;
 
-    public String getId() {
-        return id;
-    }
+    public User(){}
 
-    public void setId(String id) {
+    public User(Integer id, String name) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(getId(), user.getId());
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

@@ -1,6 +1,6 @@
 /**
  * @ClassName:AnnotaTest
- * @Description: //TODO
+ * @Description: 自定义注解测试
  * @Author:xxp
  * @Date:2019/4/27 15:54
  * @Version:1.0

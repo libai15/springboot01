@@ -1,27 +1,25 @@
 /**
- * @ClassName:StudentEntity
- * @Description: hibernate自动生成的实体类
+ * @ClassName:Student
+ * @Description: vo
  * @Author:xxp
- * @Date:2019/7/27 23:31
+ * @Date:2019/8/4 13:13
  * @Version:1.0
  **/
 
 
-package vo;
+package com.example.demo.vo;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 import java.sql.Date;
-import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
-@Table(name = "student", schema = "db5", catalog = "")
-public class StudentEntity {
+public class Student {
     private Integer id;
-    private byte[] stuName;
+    private String stuName;
     private Integer stuAge;
     private Date stuBirthday;
     private String stuSex;
@@ -30,6 +28,7 @@ public class StudentEntity {
     private Double stuEnglish;
 
     @Basic
+    @Id
     @Column(name = "id", nullable = true)
     public Integer getId() {
         return id;
@@ -40,12 +39,12 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "stu_name", nullable = true)
-    public byte[] getStuName() {
+    @Column(name = "stu_name", nullable = true, length = 50)
+    public String getStuName() {
         return stuName;
     }
 
-    public void setStuName(byte[] stuName) {
+    public void setStuName(String stuName) {
         this.stuName = stuName;
     }
 
@@ -113,21 +112,19 @@ public class StudentEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        StudentEntity that = (StudentEntity) o;
-        return Objects.equals(id, that.id) &&
-                Arrays.equals(stuName, that.stuName) &&
-                Objects.equals(stuAge, that.stuAge) &&
-                Objects.equals(stuBirthday, that.stuBirthday) &&
-                Objects.equals(stuSex, that.stuSex) &&
-                Objects.equals(stuAddress, that.stuAddress) &&
-                Objects.equals(stuMath, that.stuMath) &&
-                Objects.equals(stuEnglish, that.stuEnglish);
+        Student student = (Student) o;
+        return Objects.equals(id, student.id) &&
+                Objects.equals(stuName, student.stuName) &&
+                Objects.equals(stuAge, student.stuAge) &&
+                Objects.equals(stuBirthday, student.stuBirthday) &&
+                Objects.equals(stuSex, student.stuSex) &&
+                Objects.equals(stuAddress, student.stuAddress) &&
+                Objects.equals(stuMath, student.stuMath) &&
+                Objects.equals(stuEnglish, student.stuEnglish);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(id, stuAge, stuBirthday, stuSex, stuAddress, stuMath, stuEnglish);
-        result = 31 * result + Arrays.hashCode(stuName);
-        return result;
+        return Objects.hash(id, stuName, stuAge, stuBirthday, stuSex, stuAddress, stuMath, stuEnglish);
     }
 }
